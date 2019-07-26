@@ -10,6 +10,7 @@ history=cat "%CMDER_ROOT%\config\.history"
 unalias=alias /d $1
 cmderr=cd /d "%CMDER_ROOT%"
 
+upd=node C:\S\automation\gitUpdate.js C:\projects\
 ..=cd ..
 ...=cd ..\..
 ....=cd ..\..\..
