@@ -51,7 +51,7 @@ repos=cd C:\projects
 
 gs=git status
 ga=git add $*
-gc=git commit . -m $*
+gc=node C:\S\automation\git-commit.js %cd% $*
 gf=git fetch
 gp=git pull
 gpo=git pull origin $*
