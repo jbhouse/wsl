@@ -53,7 +53,7 @@ gs=git status
 ga=git add $*
 gc=node C:\S\automation\git-commit.js %cd% $*
 gf=git fetch
-gp=git pull
+gp=node C:\S\automation\gitPull.js %cd% $*
 gpo=git pull origin $*
 clone=git clone $*
 
