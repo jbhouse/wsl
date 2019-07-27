@@ -11,6 +11,8 @@ unalias=alias /d $1
 cmderr=cd /d "%CMDER_ROOT%"
 
 upd=node C:\S\automation\gitUpdate.js C:\projects\
+hub=node C:\S\automation\go-to-github.js "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+
 ..=cd ..
 ...=cd ..\..
 ....=cd ..\..\..
