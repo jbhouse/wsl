@@ -10,6 +10,8 @@ history=cat "%CMDER_ROOT%\config\.history"
 unalias=alias /d $1
 cmderr=cd /d "%CMDER_ROOT%"
 
+start=npm run serve
+compile=npm run tsc
 upd=node C:\S\automation\gitUpdate.js C:\projects\
 hub=node C:\S\automation\go-to-github.js "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 
@@ -47,13 +49,14 @@ cr = cd C:\projects\codeReview
 temp = cd C:\projects\temp
 tmp = cd C:\projects\temp
 
+auto=cd C:\S\automation
 repos=cd C:\projects
 
 gs=git status
 ga=git add $*
-gc=node C:\S\automation\git-commit.js %cd% $*
+gc=node C:\S\automation\.build\utilities\git-commit.js %cd% $*
 gf=git fetch
-gp=node C:\S\automation\gitPull.js %cd% $*
+gp=node C:\S\automation\.build\utilities\gitPull.js %cd% $*
 gpo=git pull origin $*
 clone=git clone $*
 
@@ -62,13 +65,12 @@ serve=ng.cmd serve
 node = C:\S\node-v10.16.0-win-x64\node.exe $*
 npi=npm install
 
-edit=nano "C:\S\cmdr\config\user-aliases.cmd"
+tedit=nano "C:\S\cmdr\config\user-aliases.cmd"
 edit=C:\S\code\Code.exe "C:\S\cmdr\config\user-aliases.cmd"
 ex=explorer .
 ex.=explorer .
-google="C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk"
+google="C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk" $*
 
 cdl=cd $* $t ls
 ls=ls --show-control-chars -F --color $*
 mkd=mkdir "$1"$tcd "$1"
-
