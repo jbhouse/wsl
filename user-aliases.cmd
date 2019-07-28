@@ -12,8 +12,15 @@ cmderr=cd /d "%CMDER_ROOT%"
 
 start=npm run serve
 compile=npm run tsc
-upd=node C:\S\automation\gitUpdate.js C:\projects\
-hub=node C:\S\automation\go-to-github.js "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+upd=node C:\S\automation\.build\utilities\gitUpdate.js C:\projects\
+hub=node C:\S\automation\.build\utilities\go-to-github.js "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+gc=node C:\S\automation\.build\utilities\git-commit.js %cd% $*
+gp=node C:\S\automation\.build\utilities\gitPull.js %cd% $*
+gs=git status
+ga=git add $*
+gf=git fetch
+gpo=git pull origin $*
+clone=git clone $*
 
 ..=cd ..
 ...=cd ..\..
@@ -51,14 +58,6 @@ tmp = cd C:\projects\temp
 
 auto=cd C:\S\automation
 repos=cd C:\projects
-
-gs=git status
-ga=git add $*
-gc=node C:\S\automation\.build\utilities\git-commit.js %cd% $*
-gf=git fetch
-gp=node C:\S\automation\.build\utilities\gitPull.js %cd% $*
-gpo=git pull origin $*
-clone=git clone $*
 
 ng="ng.cmd" $*
 serve=ng.cmd serve
