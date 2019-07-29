@@ -11,11 +11,17 @@ unalias=alias /d $1
 cmderr=cd /d "%CMDER_ROOT%"
 
 start=npm run serve
-compile=npm run tsc
+comp=rm -rf .build && npm run tsc
+compile=rm -rf .build && npm run tsc
+
+mc=node C:\S\automation\.build\utilities\commandLineCommands\clean.js %cd%
+mio=node C:\S\automation\.build\utilities\commandLineCommands\installOffline.js %cd%
+mu=node C:\S\automation\.build\utilities\commandLineCommands\installUpdate.js %cd%
 upd=node C:\S\automation\.build\utilities\gitUpdate.js C:\projects\
 hub=node C:\S\automation\.build\utilities\go-to-github.js "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 gc=node C:\S\automation\.build\utilities\git-commit.js %cd% $*
 gp=node C:\S\automation\.build\utilities\gitPull.js %cd% $*
+
 gs=git status
 ga=git add $*
 gf=git fetch
@@ -68,7 +74,7 @@ tedit=nano "C:\S\cmdr\config\user-aliases.cmd"
 edit=C:\S\code\Code.exe "C:\S\cmdr\config\user-aliases.cmd"
 ex=explorer .
 ex.=explorer .
-google="C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk" $*
+google=start www.google.com/search?q="$1"
 
 cdl=cd $* $t ls
 ls=ls --show-control-chars -F --color $*
