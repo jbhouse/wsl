@@ -79,4 +79,6 @@ google=start www.google.com/search?q="$1"
 cdl=cd $* $t ls
 ls=ls --show-control-chars -F --color $*
 mkd=mkdir "$1"$tcd "$1"
+tc=touch "$1"$tC:\S\code\Code.exe "$1"
+
 setenv=nano C:\S\cmdr\config\user-profile.cmd
