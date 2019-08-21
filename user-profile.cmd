@@ -12,3 +12,5 @@
 :: set "PATH=%CMDER_ROOT%\vendor\whatever;%PATH%"
 
 @echo off
+@set JAVA_HOME=C:\Program Files\Java\jre1.8.0_221\
+@set PATH=C:\Program Files\Java\jre1.8.0_221\bin%PATH%

@@ -17,11 +17,10 @@ compile=rm -rf .build && npm run tsc
 mc=node C:\S\automation\.build\utilities\commandLineCommands\clean.js %cd%
 mio=node C:\S\automation\.build\utilities\commandLineCommands\installOffline.js %cd%
 mu=node C:\S\automation\.build\utilities\commandLineCommands\installUpdate.js %cd%
-upd=node C:\S\automation\.build\utilities\gitUpdate.js C:\projects\
-hub=node C:\S\automation\.build\utilities\go-to-github.js "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-gc=node C:\S\automation\.build\utilities\git-commit.js %cd% $*
-gp=node C:\S\automation\.build\utilities\gitPull.js %cd% $*
-
+upd=node C:\S\automation\.build\bin\main.js gitUpdate C:\projects\
+hub=node C:\S\automation\.build\bin\main.js goToGithub "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+gc=node C:\S\automation\.build\bin\main.js gitCommit %cd% $*
+gp=node C:\S\automation\.build\bin\main.js gitPull %cd% $*
 gs=git status
 ga=git add $*
 gf=git fetch
