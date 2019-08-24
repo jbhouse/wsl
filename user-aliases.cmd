@@ -54,7 +54,6 @@ DownLoads=cd %UserProfile%\DownLoads
 
 angular = cd C:\projects\angular
 ang = cd C:\projects\angular
-java = cd C:\projects\java
 jav = cd C:\projects\java
 review = cd C:\projects\codeReview
 cr = cd C:\projects\codeReview
