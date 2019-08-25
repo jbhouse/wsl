@@ -49,8 +49,10 @@ Docs=cd %UserProfile%\Documents
 documents=cd %UserProfile%\Documents
 Documents=cd %UserProfile%\Documents
 down=cd %UserProfile%\DownLoads
+downloads=cd %UserProfile%\DownLoads
 downLoads=cd %UserProfile%\DownLoads
 DownLoads=cd %UserProfile%\DownLoads
+Downloads=cd %UserProfile%\DownLoads
 
 angular = cd C:\projects\angular
 ang = cd C:\projects\angular
