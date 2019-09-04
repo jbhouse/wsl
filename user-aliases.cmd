@@ -13,6 +13,7 @@ cmderr=cd /d "%CMDER_ROOT%"
 start=npm run serve
 comp=rm -rf .build && npm run tsc
 compile=rm -rf .build && npm run tsc
+npi=npm install
 
 mc=node C:\S\automation\.build\utilities\commandLineCommands\clean.js %cd%
 mio=node C:\S\automation\.build\utilities\commandLineCommands\installOffline.js %cd%
@@ -36,6 +37,7 @@ g=node C:\S\automation\.build\bin\main.js google "C:\\Program Files (x86)\\Googl
 ....=cd ..\..\..
 .....=cd ..\..\..\..
 ......=cd ..\..\..\..\..
+.l=cd .. $t ls
 la=ls -la
 l=dir
 c=cls
@@ -67,10 +69,6 @@ tmp = cd C:\projects\temp
 
 auto= cd C:\S\automation
 repos= cd C:\projects
-
-ng="ng.cmd" $*
-serve=ng.cmd serve
-npi=npm install
 
 tedit=nano "C:\S\cmdr\config\user-aliases.cmd"
 edit=C:\S\code\Code.exe "C:\S\cmdr\config\user-aliases.cmd"
