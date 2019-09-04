@@ -12,5 +12,6 @@
 :: set "PATH=%CMDER_ROOT%\vendor\whatever;%PATH%"
 
 @echo off
+@set MAVEN_HOME=C:\S\apache-maven-3.6.1\bin
 @set JAVA_HOME=C:\S\Java\jdk1.8.0_221\
-@set PATH=%JAVA_HOME%;%PATH%
+@set PATH=%JAVA_HOME%;%MAVEN_HOME%;C:\S\node-v10.16.0-win-x64;%UserProfile%\AppData\Roaming\npm;%PATH%
