@@ -18,6 +18,7 @@ npi=npm install
 mc=node C:\S\automation\.build\utilities\commandLineCommands\clean.js %cd%
 mio=node C:\S\automation\.build\utilities\commandLineCommands\installOffline.js %cd%
 mu=node C:\S\automation\.build\utilities\commandLineCommands\installUpdate.js %cd%
+sbr=mvn spring-boot:run
 
 gs=git status
 ga=git add $*
@@ -31,6 +32,10 @@ gp=node C:\S\automation\.build\bin\main.js gitPull %cd% $*
 pr=node C:\S\automation\.build\bin\main.js openPR "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 google=node C:\S\automation\.build\bin\main.js google "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" $*
 g=node C:\S\automation\.build\bin\main.js google "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" $*
+sbrp=node C:\S\automation\.build\bin\main.js FilterSpringBootRun $*
+miop=node C:\S\automation\.build\bin\main.js FilterSpringBootRun "mvn -o install" $*
+mup=node C:\S\automation\.build\bin\main.js FilterSpringBootRun "mvn clean install -U" $*
+mcp=node C:\S\automation\.build\bin\main.js FilterSpringBootRun "mvn clean" $*
 
 ..=cd ..
 ...=cd ..\..
