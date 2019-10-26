@@ -29,6 +29,7 @@ upd=node C:\S\automation\.build\bin\main.js gitUpdate C:\projects\
 hub=node C:\S\automation\.build\bin\main.js goToGithub "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 gc=node C:\S\automation\.build\bin\main.js gitCommit %cd% $*
 gp=node C:\S\automation\.build\bin\main.js gitPull %cd% $*
+gsp=node C:\S\automation\.build\bin\main.js popStashByName %cd% $*
 pr=node C:\S\automation\.build\bin\main.js openPR "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 google=node C:\S\automation\.build\bin\main.js google "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" $*
 g=node C:\S\automation\.build\bin\main.js google "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" $*
