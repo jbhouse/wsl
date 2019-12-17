@@ -39,6 +39,11 @@ miop=node C:\S\automation\.build\bin\main.js FilterSpringBootRun "mvn -o install
 mup=node C:\S\automation\.build\bin\main.js FilterSpringBootRun "mvn clean install -U" $*
 mcp=node C:\S\automation\.build\bin\main.js FilterSpringBootRun "mvn clean" $*
 
+add=node C:\S\automation\.build\bin\main.js sql add $*
+upd=node C:\S\automation\.build\bin\main.js sql update $*
+del=node C:\S\automation\.build\bin\main.js sql delete $*
+sel=node C:\S\automation\.build\bin\main.js sql select $*
+
 tech=node C:\S\automatedBrowsing\searchForNewVideos.js tech
 learning=node C:\S\automatedBrowsing\searchForNewVideos.js learning
 entertainment=node C:\S\automatedBrowsing\searchForNewVideos.js entertainment
