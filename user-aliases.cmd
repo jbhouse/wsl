@@ -44,6 +44,8 @@ upd=node C:\S\automation\.build\bin\main.js sql update $*
 del=node C:\S\automation\.build\bin\main.js sql delete $*
 sel=node C:\S\automation\.build\bin\main.js sql select $*
 
+mdn=node C:\S\automation\.build\bin\main.js jsSyntax "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" $*
+
 tech=node C:\S\automatedBrowsing\searchForNewVideos.js tech
 learning=node C:\S\automatedBrowsing\searchForNewVideos.js learning
 entertainment=node C:\S\automatedBrowsing\searchForNewVideos.js entertainment
