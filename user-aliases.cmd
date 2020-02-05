@@ -10,6 +10,7 @@ history=cat "%CMDER_ROOT%\config\.history"
 unalias=alias /d $1
 cmderr=cd /d "%CMDER_ROOT%"
 
+serve=ng serve
 start=npm run serve
 comp=rm -rf .build && npm run tsc
 compile=rm -rf .build && npm run tsc
