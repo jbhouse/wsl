@@ -4,6 +4,21 @@
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
+# outputs the most recent record in the command line's history
+function hist {
+    history | egrep -v 'history|hist' | tail -1 | sed 's_^ *__' | awk '{print $2}'
+}
+
+# copies the output of the given command to the clipboard
+function cc {
+    "$1" > /dev/clipboard
+}
+
+# takes the output of another command, evaluates (runs) that command, and passes the output to the clipboard
+function cco {
+    eval $("$1") > /dev/clipboard
+}
+
 function fresh { . ~/.bashrc ; }
 
 function mkd { test -d "$1" || mkdir "$1" && cd "$1" ; }
