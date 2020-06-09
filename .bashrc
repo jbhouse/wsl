@@ -1,8 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
 
 # outputs the most recent record in the command line's history
 function hist {
@@ -19,20 +17,38 @@ function cco {
     eval $("$1") > /dev/clipboard
 }
 
-function fresh { . ~/.bashrc ; }
-
-function mkd { test -d "$1" || mkdir "$1" && cd "$1" ; }
-
-function up {
-    ups=""
-    for i in $(seq 1 $1)
-    do
-        ups=$ups"../"
-    done
-    cd $ups
+function gsearch() {
+    nano $(rg "$1" -l | preview)
 }
 
-function cdl { cd "$@" && ls -la ; }
+function disp() {
+    /mnt/c/S/VcXsrv/vcxsrv.exe -ac -multiwindow
+}
+
+function fresh {
+. ~/.bashrc
+}
+
+mkd()
+{
+    test -d "$1" || mkdir "$1" && cd "$1"
+}
+
+function up {
+ups=""
+for i in $(seq 1 $1)
+do
+        ups=$ups"../"
+done
+cd $ups
+}
+
+function cdl(){ cd "$@" && ls -la; }
+
+
+function display {
+    $(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0
+}
 
 # If not running interactively, don't do anything
 case $- in
@@ -105,10 +121,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -120,6 +132,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0
+export LIBGL_ALWAYS_INDIRECT=1
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
 
 # HSTR configuration - add this to ~/.bashrc
 alias hh=hstr                    # hh to be alias for hstr
@@ -135,4 +154,4 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
-export PS1="\${debian_chroot:+(\$debian_chroot)}\u@\h:\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+# export PS1="\${debian_chroot:+(\$debian_chroot)}\u@\h:\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
