@@ -2,6 +2,15 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+function gc() {
+    git commit -m "$1"
+}
+
+function gac() {
+    git add .
+    git commit -m "$1"
+}
+
 # outputs the most recent record in the command line's history
 function hist {
     history | egrep -v 'history|hist' | tail -1 | sed 's_^ *__' | awk '{print $2}'
@@ -9,12 +18,12 @@ function hist {
 
 # copies the output of the given command to the clipboard
 function cc {
-    "$1" > /dev/clipboard
+    "$1" | clip.exe
 }
 
 # takes the output of another command, evaluates (runs) that command, and passes the output to the clipboard
 function cco {
-    eval $("$1") > /dev/clipboard
+    eval $("$1") | clip.exe
 }
 
 function gsearch() {
@@ -56,23 +65,11 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
 HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
 shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
@@ -96,11 +93,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -137,8 +129,6 @@ fi
 
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0
 export LIBGL_ALWAYS_INDIRECT=1
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
 
 # HSTR configuration - add this to ~/.bashrc
 alias hh=hstr                    # hh to be alias for hstr
@@ -154,4 +144,7 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
-# export PS1="\${debian_chroot:+(\$debian_chroot)}\u@\h:\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@ \w\[\033[0;32m\]$(__git_ps1)\[\033[0m\] '
+LS_COLORS='ow=01;32;40'
+LS_COLORS=$LS_COLORS:'di=0;35:'
+export LS_COLORS
