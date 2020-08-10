@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-gcim() {
+gcm() {
   git commit -m "${1:?'Missing git commit message!'}"
 }
 
