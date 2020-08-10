@@ -2,13 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-function gc() {
-    git commit -m "$1"
-}
-
-function gac() {
-    git add .
-    git commit -m "$1"
+gcim() {
+  git commit -m "${1:?'Missing git commit message!'}"
 }
 
 # outputs the most recent record in the command line's history
