@@ -108,8 +108,18 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/.bash_aliases ];
+then
     . ~/.bash_aliases
+fi
+
+if [ -f ~/.bash_git ];
+then
+    . ~/.bash_git
+else
+    sudo apt install curl
+    curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.bash_git
+    . ~/.bash_git
 fi
 
 if ! shopt -oq posix; then
