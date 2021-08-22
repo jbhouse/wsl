@@ -1,0 +1,51 @@
+sudo apt htop
+sudo apt install htop
+sudo snap install intellij-idea-community --classic
+sudo apt install openjdk-8-jdk-headless
+ssh-keygen -t ed25519 -C jbmoorhouse1@gmail.com
+ssh-add ~/.ssh/id_ed25519
+sudo apt-get update
+sudo apt-get install xclip
+xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+sudo apt install git
+
+
+sudo apt install maven
+
+------------------------
+if there is an issue with maven, follow these instructions
+https://www.liquidweb.com/kb/how-to-install-and-configure-apache-maven-on-ubuntu-18-04/
+------------------------
+
+
+mkdir repos
+cd repos
+git clone git@github.com:jbhouse/wsl.git
+cp wsl/linux/.bashrc ~/.bashrc 
+cp wsl/linux/.bash_aliases ~/.bash_aliases
+cp wsl/linux/.bash_profile ~/.bash_profile
+sudo apt install redshift
+sudo snap install code --classic
+git config --global user.email jbmoorhouse1@gmail.com
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install nodejs
+sudo apt install npm
+sudo npm i -g cli-plus-plus
+
+
+
+sudo apt install postgresql-13
+sudo apt install postgresql postgresql-contrib
+sudo -u postgres createuser --interactive
+sudo -u postgres createdb joe
+
+
+npm install -g @angular/cli
+sudo npm install -g @angular/cli
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+PATH="$PATH"
+
+

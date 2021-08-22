@@ -151,3 +151,9 @@ PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\]@ \w\[\033[0;32m\]$(__gi
 LS_COLORS='ow=01;32;40'
 LS_COLORS=$LS_COLORS:'di=0;35:'
 export LS_COLORS
+export M2_HOME=/opt/maven
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$M2_HOME/bin:$PATH:$JAVA_HOME/bin
+bind 'TAB':menu-complete
+bind "set show-all-if-ambiguous on"
+bind "set menu-complete-display-prefix on"
